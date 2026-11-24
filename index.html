@@ -63,7 +63,7 @@ footer{text-align:center;color:var(--muted);padding:32px 5vw;border-top:1px soli
 <main id="main">
 <section class="hero">
   <h1>Andrei Scarevnea</h1>
-  <p class="lead">I’m a cyber security student who builds and tests secure systems: locked-down Azure environments, scripts that spot attacks in logs, and web apps I try to break.</p>
+  <p class="lead">I’m a cyber security student who builds and tests secure systems, from scripts that spot attacks in logs to machine learning for security and cloud proofs of concept.</p>
   <p><strong>Open to IT and cyber security internships</strong></p>
   <a class="btn primary" href="#projects">See my projects</a>
   <a class="btn" href="https://www.linkedin.com/in/andrei-scarevnea-4b263628b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -72,42 +72,20 @@ footer{text-align:center;color:var(--muted);padding:32px 5vw;border-top:1px soli
 
 <section id="projects">
   <h2>Projects</h2>
-  <p class="lead">Three pieces of coursework where I designed, built or tested something, and checked that it worked. Click a project to open it on GitHub.</p>
+  <p class="lead">Three projects from my GitHub. Click a project to open its folder, with the code, report and README.</p>
 
-  <!-- PROJECT 1: change the href below to your Azure project folder or repo -->
   <article class="project">
-    <h3><a class="project-link" href="https://github.com/Andre10002/Portfolio-Projects" target="_blank" rel="noopener noreferrer">Secure Azure web app deployment</a></h3>
-    <p class="sub">TU Dublin, Security Administration</p>
-    <p>A web app environment on Azure where the database can’t be reached from the internet, and each user role only gets the access it needs.</p>
-    <ul>
-      <li>Split the VM, SQL Database and Blob Storage into separate subnets, with Network Security Groups and private endpoints.</li>
-      <li>Built a custom RBAC matrix for three roles and tested access as each one.</li>
-      <li>Added SSH key-only login, PAM lockout, TLS 1.2, Transparent Data Encryption, fail2ban and AIDE.</li>
-      <li>Automated daily security checks, backups and log retention with Bash and cron.</li>
-    </ul>
-    <ul class="tags"><li>Azure</li><li>Linux</li><li>Bash</li><li>RBAC</li><li>NSGs</li></ul>
-    <figure style="margin:0">
-      <svg viewBox="0 0 640 170" role="img" aria-labelledby="azt azd">
-        <title id="azt">Azure network layout</title>
-        <desc id="azd">Internet traffic reaches the web subnet. The web subnet reaches the database through a private endpoint and storage in its own subnet. A direct path from the internet to the database is blocked.</desc>
-        <rect x="8" y="55" width="90" height="50" rx="8" fill="none" stroke="#9fb0c8"/><text x="30" y="85">Internet</text>
-        <rect x="170" y="55" width="140" height="50" rx="8" fill="none" stroke="#38bdf8"/><text x="182" y="76">Web subnet (NSG)</text><text x="182" y="94" style="fill:#9fb0c8;font-size:11px">Ubuntu VM, SSH keys only</text>
-        <rect x="400" y="8" width="150" height="46" rx="8" fill="none" stroke="#38bdf8"/><text x="412" y="29">Data subnet (NSG)</text><text x="412" y="45" style="fill:#9fb0c8;font-size:11px">SQL Database</text>
-        <rect x="400" y="110" width="150" height="46" rx="8" fill="none" stroke="#38bdf8"/><text x="412" y="131">Storage subnet (NSG)</text><text x="412" y="147" style="fill:#9fb0c8;font-size:11px">Blob Storage</text>
-        <path d="M98 80H170" stroke="#38bdf8" stroke-width="2"/>
-        <path d="M310 70L400 33" stroke="#38bdf8" stroke-width="2"/><path d="M310 90L400 133" stroke="#38bdf8" stroke-width="2"/>
-        <path d="M54 55Q54 14 400 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6 5"/>
-        <text x="180" y="22" style="fill:#f59e0b">No public route to the database</text>
-        <text x="322" y="58" style="fill:#9fb0c8;font-size:11px">private endpoint</text>
-      </svg>
-      <figcaption>Simplified layout of the environment. Solid lines are allowed traffic; the amber dashed line is the path that is blocked.</figcaption>
-    </figure>
+    <h3><a class="project-link" href="https://github.com/Andre10002/Portfolio-Projects/tree/main/Machine%20Learning%20Cybersecurity" target="_blank" rel="noopener noreferrer">Machine Learning Cybersecurity</a></h3>
+    <p class="sub">University coursework</p>
+    <p>A machine learning model built and tested in a Jupyter notebook, with the dataset it was trained on and a written project report.</p>
+    <!-- ADD: 2-4 bullets on what the model predicts, the algorithm used and your results -->
+    <ul class="tags"><li>Machine learning</li><li>Jupyter Notebook</li><li>Cybersecurity</li></ul>
+    <p class="sub">In the folder: model notebook, dataset (CSV), project report (PDF), README.</p>
     <span class="view" aria-hidden="true">View on GitHub</span>
   </article>
 
-  <!-- PROJECT 2 -->
   <article class="project">
-    <h3><a class="project-link" href="https://github.com/Andre10002/Portfolio-Projects/tree/main/Security%20Investigation%20Tool" target="_blank" rel="noopener noreferrer">SOC log analysis and threat detection tool</a></h3>
+    <h3><a class="project-link" href="https://github.com/Andre10002/Portfolio-Projects/tree/main/Security%20Investigation%20Tool" target="_blank" rel="noopener noreferrer">Security Investigation Tool</a></h3>
     <p class="sub">PowerShell, personal project</p>
     <p>A modular PowerShell tool that reads raw logs and writes one investigation report, the way an analyst would triage an alert queue.</p>
     <ul>
@@ -125,23 +103,13 @@ footer{text-align:center;color:var(--muted);padding:32px 5vw;border-top:1px soli
     <span class="view" aria-hidden="true">View on GitHub</span>
   </article>
 
-  <!-- PROJECT 3: change the href below to your Juice Shop folder or repo -->
   <article class="project">
-    <h3><a class="project-link" href="https://github.com/Andre10002/Portfolio-Projects" target="_blank" rel="noopener noreferrer">Web application penetration test: OWASP Juice Shop</a></h3>
-    <p class="sub">TU Dublin, Web Application Security</p>
-    <p>I attacked a deliberately vulnerable web app with Burp Suite, then wrote up each finding with a fix.</p>
-    <ul>
-      <li>Found and exploited 7 vulnerabilities myself (23 solved across the team).</li>
-      <li>Wrote a technical report mapping every finding to OWASP Top 10 and CWE, with root cause and remediation advice.</li>
-    </ul>
-    <ul class="tags"><li>Burp Suite</li><li>OWASP Top 10</li><li>CWE</li><li>Reporting</li></ul>
-    <ul class="vulns">
-      <li>SQL Injection<small>Injection</small></li>
-      <li>Broken Access Control<small>Authorisation</small></li>
-      <li>Sensitive Data Exposure<small>Cryptographic failures</small></li>
-      <li>Security Misconfiguration<small>Hardening</small></li>
-    </ul>
-    <p class="sub">Burp Suite Proxy, Repeater and Intruder.</p>
+    <h3><a class="project-link" href="https://github.com/Andre10002/Portfolio-Projects/tree/main/WinLocal_AWS_Project" target="_blank" rel="noopener noreferrer">WinLocal AWS project</a></h3>
+    <p class="sub">Proof of concept</p>
+    <p>A proof of concept for WinLocal on AWS, documented in a written PoC report.</p>
+    <!-- ADD: 2-4 bullets on the AWS services used, what you built and the outcome -->
+    <ul class="tags"><li>AWS</li><li>Proof of concept</li></ul>
+    <p class="sub">In the folder: PoC report (PDF), project image, README.</p>
     <span class="view" aria-hidden="true">View on GitHub</span>
   </article>
 </section>
